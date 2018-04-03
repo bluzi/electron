@@ -2,7 +2,14 @@ git:
   depth: 10
 notifications:
   email: false
-  webhook: https://www.travisbuddy.com/
+  webhooks:
+    urls:
+      - 'https://www.travisbuddy.com/?insertMode=update'
+    on_success: always
+    on_failure: always
+    on_start: never
+    on_cancel: never
+    on_error: never
 
 before_install:
   - export BOTO_CONFIG=/dev/null
